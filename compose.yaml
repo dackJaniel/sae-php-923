@@ -1,0 +1,32 @@
+services:
+  server:
+    container_name: php-apache
+    build: .
+    ports:
+      - 8080:80
+    volumes:
+      - ./src:/var/www/html
+
+  db:
+    container_name: mariadb
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 9000:80
+    environment:
+      # PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+
+volumes:
+  data:
