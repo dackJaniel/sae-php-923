@@ -27,24 +27,24 @@ function loadAutoloadFile(): void
 }
 
 
-function loadConfigFile(): void
-{
-    // get config file
-    $configFile = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . 'conf.php';
-    if (!file_exists($configFile)) {
-        trigger_error(
-            sprintf(
-                _('Die Config Datei (%s) existiert nicht.'),
-                $configFile
-            ),
-            E_USER_ERROR
-        );
-    }
-    require_once $configFile;
-}
+// function loadConfigFile(): void
+// {
+//     // get config file
+//     $configFile = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . 'conf.php';
+//     if (!file_exists($configFile)) {
+//         trigger_error(
+//             sprintf(
+//                 _('Die Config Datei (%s) existiert nicht.'),
+//                 $configFile
+//             ),
+//             E_USER_ERROR
+//         );
+//     }
+//     require_once $configFile;
+// }
 
 
 loadAutoloadFile();
-loadConfigFile();
+// loadConfigFile();
 
 $app = new App;

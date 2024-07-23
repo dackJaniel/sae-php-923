@@ -1,5 +1,11 @@
 <?php
 
+namespace App\Model;
+
+use PDO;
+use PDOException;
+use PDOStatement;
+
 define('DB_CONN', "mysql");
 define('DB_HOST', 'mariadb');
 define('DB_PORT', '3306');
