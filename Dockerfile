@@ -21,11 +21,14 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
-# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-#     && php -r "unlink('composer-setup.php');"
 RUN composer install
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# Apache neu starten, um die neue Konfiguration zu übernehmen
+RUN service apache2 restart
+
 # Set working directory
-WORKDIR /var/www/html/public
+WORKDIR /var/www/html
