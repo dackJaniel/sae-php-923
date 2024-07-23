@@ -1,0 +1,51 @@
+<!-- social media links -->
+<section class="sozial-media">
+    <!-- <a href="#top" class="backtotop backtotop-top backtotop-bg-green"><i class="fas fa-chevron-up"></i></a> -->
+    <div class="width-900 margin-auto">
+        <h3 class="font-size-30">Unterstützte uns auf unserer Mission</h3>
+        <div class="flex justify-center">
+            <a href="#"><i class="fab fa-instagram fa-icon"></i></a>
+            <a href="#"><i class="fab fa-facebook-square fa-icon"></i></a>
+            <a href="#"><i class="fab fa-twitter-square fa-icon"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- footer links -->
+<nav>
+    <div class="width-900 flex justify-between flex-column-sm margin-auto">
+        <ul class="footer-link-box">
+            <h4 class="font-size-15">Wichtige Seiten</h4>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+        <ul class="footer-link-box">
+            <h4 class="font-size-15">Über useless.com</h4>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+            <li><a href="#">Cookies</a></li>
+        </ul>
+        <ul class="footer-link-box">
+            <h4 class="font-size-15">Besuche uns</h4>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- seals -->
+<section class="seal">
+    <div class="width-1200 flex justify-center margin-auto">
+        <img src="/asset/img/seal/bio.png" alt="useless-bio-seal" />
+        <img src="/asset/img/seal/bioland.png" alt="useless-bioland-seal" />
+        <img src="/asset/img/seal/bio2.png" alt="useless-bio-seal" />
+        <img src="/asset/img/seal/fairtrade.png" alt="useless-fairtrade-seal" />
+        <img src="/asset/img/seal/fsc.png" alt="useless-fsc-seal" />
+    </div>
+</section>
+
+{% block nav %}
+{% include '/snippets/footer/copyright.twig' %}
+{% endblock %}

@@ -1,0 +1,29 @@
+<nav>
+    <ul class="flex justify-between width-1200">
+        <li>
+            <a href="/"><img src="/asset/img/logo/logo.png" alt="useless-logo" /></a>
+        </li>
+        <div class="flex flex-column-md menu" id="menu">
+
+        <li><a href="/">Home</a></li>
+
+        {% if user.isLoggedIn %}
+
+        <li><a href="/profile">Konto</a></li>
+        <li><a href="/logout">Abmelden</a></li>
+
+        {% else %}
+
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Registrieren</a></li>
+
+        {% endif %}
+
+        </div>
+        <div class="menu-icon flex justify-between flex-column">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </ul>
+</nav>

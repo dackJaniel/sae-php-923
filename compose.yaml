@@ -6,6 +6,8 @@ services:
       - 8080:80
     volumes:
       - ./src:/var/www/html
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER=1
 
   db:
     container_name: mariadb
