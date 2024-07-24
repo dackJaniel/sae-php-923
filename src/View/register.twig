@@ -1,0 +1,27 @@
+{% extends 'template/mainTemplate.twig' %} 
+
+{% block title %}Home{% endblock %}
+
+{% block nav %}
+{% include '/snippets/nav.twig'%}
+{% endblock %} 
+
+{% block content %}
+
+<h1>Register</h1>
+<form action="" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name">
+    <label for="mail">Email</label>
+    <input type="email" name="mail">
+    <label for="password">Password</label>
+    <input type="password" name="password">
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
+
+{% block footer %}
+{% include '/snippets/footer.twig' %}
+{% endblock %}
