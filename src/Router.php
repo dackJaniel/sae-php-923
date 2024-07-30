@@ -14,13 +14,15 @@ class Router
         if (!isset($splittedUrl[0])) {
             return;
         }
-        $reqController = "App" . DIRECTORY_SEPARATOR . "Controller" . DIRECTORY_SEPARATOR . ucfirst(strtolower($splittedUrl[0]) . 'Controller');
+        $reqController = "App\Controller\\" . ucfirst(strtolower($splittedUrl[0]) . 'Controller');
 
         if (!class_exists($reqController)) {
+            dd($reqController);
             $this->controller = Controller\NotFoundController::class;
         } else {
             $this->controller = $reqController;
         }
+
         unset($splittedUrl[0]);
 
         if (!isset($splittedUrl[1]) || !method_exists($this->controller, $splittedUrl[1])) {

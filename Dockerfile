@@ -21,11 +21,15 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
-RUN composer install
+
+# TODO: Something is wrong with the composer install
+RUN cd /var/www/html && composer install
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
+RUN a2enmod rewrite
 
 # Apache neu starten, um die neue Konfiguration zu übernehmen
 RUN service apache2 restart
