@@ -10,7 +10,7 @@ class App
     {
         $router = new Router;
 
-        $reqController = $router->getController();
+        $reqController = $router->getController(); // Controller\HomeController::class;
         $reqMethod = $router->getMethod();
         $reqParams = $router->getParams();
 

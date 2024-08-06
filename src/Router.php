@@ -17,7 +17,6 @@ class Router
         $reqController = "App\Controller\\" . ucfirst(strtolower($splittedUrl[0]) . 'Controller');
 
         if (!class_exists($reqController)) {
-            dd($reqController);
             $this->controller = Controller\NotFoundController::class;
         } else {
             $this->controller = $reqController;
@@ -25,13 +24,13 @@ class Router
 
         unset($splittedUrl[0]);
 
-        if (!isset($splittedUrl[1]) || !method_exists($this->controller, $splittedUrl[1])) {
-            return;
-        }
-        $this->method = $splittedUrl[1];
-        unset($splittedUrl[1]);
+        // if (!isset($splittedUrl[1]) || !method_exists($this->controller, $splittedUrl[1])) {
+        //     return;
+        // }
+        // $this->method = $splittedUrl[1];
+        // unset($splittedUrl[1]);
 
-        $this->params = array_values($splittedUrl);
+        // $this->params = array_values($splittedUrl);
     }
 
     private function splitUrl(): array
